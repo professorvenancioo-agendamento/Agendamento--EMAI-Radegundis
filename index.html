@@ -523,6 +523,108 @@
             margin-top: 40px;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        /* --- Estilos Responsivos para Celular (Mobile-First) --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding-bottom: 10px;
+            }
+
+            .navbar-logo {
+                margin: 0 auto 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                padding: 10px;
+            }
+
+            .dropdown-content {
+                position: static;
+                min-width: 100%;
+                background-color: #444;
+                border-radius: 0;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+            
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .item-card {
+                min-height: 250px;
+            }
+
+            .mediator-schedule table, .mediator-schedule thead, .mediator-schedule tbody, .mediator-schedule th, .mediator-schedule td, .mediator-schedule tr {
+                display: block;
+            }
+
+            .mediator-schedule thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            
+            .mediator-schedule tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+
+            .mediator-schedule td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+            }
+
+            .mediator-schedule td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label);
+                font-weight: bold;
+            }
+
+            /* Adaptação para o conteúdo da tabela para melhor visualização */
+            .mediator-schedule td:nth-of-type(1):before { content: "Rotina Diária"; }
+            .mediator-schedule td:nth-of-type(2):before { content: "Segunda-feira"; }
+            .mediator-schedule td:nth-of-type(3):before { content: "Terça-feira"; }
+            .mediator-schedule td:nth-of-type(4):before { content: "Quarta-feira"; }
+            .mediator-schedule td:nth-of-type(5):before { content: "Quinta-feira"; }
+            .mediator-schedule td:nth-of-type(6):before { content: "Sexta-feira"; }
+
+            footer {
+                padding: 10px;
+            }
+            
+            footer p {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -530,7 +632,7 @@
     <nav id="main-navbar">
         <img src="https://portals1.com.br/wp-content/uploads/2015/06/logo-prefeitura.jpg" alt="Brasão da Prefeitura de João Pessoa" class="navbar-logo">
         <ul>
-            <li><a href="#top" class="nav-button">Página Inicial</a></li>
+            <li><a href="#" class="nav-button" id="home-button">Página Inicial</a></li>
             <li class="dropdown" id="agenda-semanal-dropdown">
                 <a href="#" class="dropdown-toggle nav-button">Agenda Semanal <span class="dropdown-arrow"></span></a>
                 <div class="dropdown-content">
@@ -625,76 +727,76 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td> 1º Aula</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">4ºA<br>07:30 - 08:10</td>
+                        <td data-label="Rotina Diária"> 1º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">...</td>
+                        <td data-label="Terça-feira" class="disponível">...</td>
+                        <td data-label="Quarta-feira" class="disponível">...</td>
+                        <td data-label="Quinta-feira" class="disponível">...</td>
+                        <td data-label="Sexta-feira" class="disponível">4ºA<br>07:30 - 08:10</td>
                     </tr>
                     <tr>
-                        <td>2º Aula</td>
-                        <td class="disponível">3ºA<br>08:10 - 08:55</td>
-                        <td class="disponível">4ºC<br>08:10 - 08:50</td>
-                        <td class="disponível">1ºC<br>08:10 - 08:55</td>
-                        <td class="disponível">3ºC<br>08:10 - 08:55</td>
-                        <td class="disponível">4ºA<br>08:10 - 08:50</td>
+                        <td data-label="Rotina Diária">2º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">3ºA<br>08:10 - 08:55</td>
+                        <td data-label="Terça-feira" class="disponível">4ºC<br>08:10 - 08:50</td>
+                        <td data-label="Quarta-feira" class="disponível">1ºC<br>08:10 - 08:55</td>
+                        <td data-label="Quinta-feira" class="disponível">3ºC<br>08:10 - 08:55</td>
+                        <td data-label="Sexta-feira" class="disponível">4ºA<br>08:10 - 08:50</td>
                     </tr>
                     <tr>
-                        <td>3º Aula</td>
-                        <td class="disponível">3ºA<br>09:30 - 10:10</td>
-                        <td class="disponível">4ºC<br>08:50 - 09:45</td>
-                        <td class="disponível">1ºC<br>09:30 - 10:10</td>
-                        <td class="disponível">3ºC<br>09:30 - 10:10</td>
-                        <td class="disponível">4ºB<br>08:50 - 09:45</td>
+                        <td data-label="Rotina Diária">3º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">3ºA<br>09:30 - 10:10</td>
+                        <td data-label="Terça-feira" class="disponível">4ºC<br>08:50 - 09:45</td>
+                        <td data-label="Quarta-feira" class="disponível">1ºC<br>09:30 - 10:10</td>
+                        <td data-label="Quinta-feira" class="disponível">3ºC<br>09:30 - 10:10</td>
+                        <td data-label="Sexta-feira" class="disponível">4ºB<br>08:50 - 09:45</td>
                     </tr>
                     <tr>
-                        <td>4º Aula</td>
-                        <td class="disponível">1ºA<br>10:10 - 11:00</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">3ºB<br>10:10 - 11:00</td>
-                        <td class="disponível">5ºC<br>10:20 - 11:00</td>
-                        <td class="disponível">4ºA<br>10:20 - 11:00</td>
+                        <td data-label="Rotina Diária">4º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">1ºA<br>10:10 - 11:00</td>
+                        <td data-label="Terça-feira" class="disponível">...</td>
+                        <td data-label="Quarta-feira" class="disponível">3ºB<br>10:10 - 11:00</td>
+                        <td data-label="Quinta-feira" class="disponível">5ºC<br>10:20 - 11:00</td>
+                        <td data-label="Sexta-feira" class="disponível">4ºA<br>10:20 - 11:00</td>
                     </tr>
                     <tr>
-                        <td>5º Aula</td>
-                        <td class="almoço">1ºA<br>10:10 - 11:00</td>
-                        <td class="almoço">...</td>
-                        <td class="almoço">3ºB<br>11:00 - 11:50</td>
-                        <td class="almoço">5ºC<br>11:00 - 11:50</td>
-                        <td class="almoço">Folga</td>
+                        <td data-label="Rotina Diária">5º Aula</td>
+                        <td data-label="Segunda-feira" class="almoço">1ºA<br>10:10 - 11:00</td>
+                        <td data-label="Terça-feira" class="almoço">...</td>
+                        <td data-label="Quarta-feira" class="almoço">3ºB<br>11:00 - 11:50</td>
+                        <td data-label="Quinta-feira" class="almoço">5ºC<br>11:00 - 11:50</td>
+                        <td data-label="Sexta-feira" class="almoço">Folga</td>
                     </tr>
                     <tr>
-                        <td>6º Aula</td>
-                        <td class="disponível">1ºB<br>13:30 - 14:10</td>
-                        <td class="disponível">5ºB<br>13:30 - 14:10</td>
-                        <td class="disponível">5ºA<br>13:30 - 14:10</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">Folga</td>
+                        <td data-label="Rotina Diária">6º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">1ºB<br>13:30 - 14:10</td>
+                        <td data-label="Terça-feira" class="disponível">5ºB<br>13:30 - 14:10</td>
+                        <td data-label="Quarta-feira" class="disponível">5ºA<br>13:30 - 14:10</td>
+                        <td data-label="Quinta-feira" class="disponível">...</td>
+                        <td data-label="Sexta-feira" class="disponível">Folga</td>
                     </tr>
                     <tr>
-                        <td>7º Aula</td>
-                        <td class="disponível">1ºB<br>14:50 - 15:30</td>
-                        <td class="disponível">5ºB<br>14:10 - 14:55</td>
-                        <td class="disponível">5ºA<br>14:10 - 14:55</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">Folga</td>
+                        <td data-label="Rotina Diária">7º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">1ºB<br>14:50 - 15:30</td>
+                        <td data-label="Terça-feira" class="disponível">5ºB<br>14:10 - 14:55</td>
+                        <td data-label="Quarta-feira" class="disponível">5ºA<br>14:10 - 14:55</td>
+                        <td data-label="Quinta-feira" class="disponível">...</td>
+                        <td data-label="Sexta-feira" class="disponível">Folga</td>
                     </tr>
                     <tr>
-                        <td>8º Aula</td>
-                        <td class="disponível">2ºA<br>15:30 - 16:10</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">Folga</td>
+                        <td data-label="Rotina Diária">8º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">2ºA<br>15:30 - 16:10</td>
+                        <td data-label="Terça-feira" class="disponível">...</td>
+                        <td data-label="Quarta-feira" class="disponível">...</td>
+                        <td data-label="Quinta-feira" class="disponível">...</td>
+                        <td data-label="Sexta-feira" class="disponível">Folga</td>
                     </tr>
                     <tr>
-                        <td>9º Aula</td>
-                        <td class="disponível">2ºA<br>16:10 - 16:50</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">...</td>
-                        <td class="disponível">Folga</td>
+                        <td data-label="Rotina Diária">9º Aula</td>
+                        <td data-label="Segunda-feira" class="disponível">2ºA<br>16:10 - 16:50</td>
+                        <td data-label="Terça-feira" class="disponível">...</td>
+                        <td data-label="Quarta-feira" class="disponível">...</td>
+                        <td data-label="Quinta-feira" class="disponível">...</td>
+                        <td data-label="Sexta-feira" class="disponível">Folga</td>
                     </tr>
                 </tbody>
             </table>
@@ -881,7 +983,17 @@
             const openTutorialsModalBtn = document.getElementById('openTutorialsModal');
             const closeTutorialsModalBtn = document.querySelector('.tutorials-close-button');
             const tutorialLinksInModal = document.querySelectorAll('.tutorial-links a');
+            const homeButton = document.getElementById('home-button');
             
+            // Gerenciar o rolamento para o topo
+            homeButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
             // Gerenciar o dropdown da agenda semanal
             dropdownToggle.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -974,7 +1086,7 @@
                         targetSection.scrollIntoView({ behavior: 'smooth' });
 
                         // Verifica se o vídeo já foi carregado
-                        const videoId = targetSection.querySelector('.video-container').dataset.youtube-id;
+                        const videoId = targetSection.querySelector('.video-container').dataset.youtubeId;
                         if (youtubePlayers[videoId]) {
                            youtubePlayers[videoId].playVideo();
                         }
