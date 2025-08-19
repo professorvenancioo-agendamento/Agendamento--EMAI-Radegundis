@@ -146,8 +146,15 @@
 
         section {
             margin-bottom: 40px;
+            /* Adicionado para garantir a rolagem suave */
+            scroll-behavior: smooth;
         }
-
+        
+        /* NOVO: Ajusta o scroll para que o título da seção fique visível */
+        .scroll-target-section {
+            scroll-margin-top: 60px; /* Igual à altura da navbar */
+        }
+        
         section h2 {
             text-align: center;
             color: #CC0000;
@@ -326,16 +333,17 @@
         }
 
         .mediator-schedule table {
-            width: 100%;
+            width: 90%;
+            max-width: 800px;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin: 20px auto 0 auto;
             table-layout: fixed;
         }
 
         .mediator-schedule th,
         .mediator-schedule td {
             border: 1px solid #ddd;
-            padding: 12px;
+            padding: 10px;
             text-align: center;
         }
 
@@ -802,57 +810,57 @@
             </table>
         </section>
 
-        <section id="agenda-sala-google" class="agenda-section">
+        <section id="agenda-sala-google" class="agenda-section scroll-target-section">
             <h2>Agenda da Sala Google</h2>
             <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ19ztvstTeg2QfqjySEo7IlsUYvYEszjL_MG2lYybOITXnhknLwDIXSAIz3D2TBYC5e0f5Dscvd"></iframe>
         </section>
 
-        <section id="agenda-lab-maker" class="agenda-section">
+        <section id="agenda-lab-maker" class="agenda-section scroll-target-section">
             <h2>Agenda do Lab Maker</h2>
             <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0SCjtdixoQeXPzblqi_eRnE4sht3pHB-UZaFpMAi-QlAgV68PCqyg9uRHZK0j5EniADQs7HvBV"></iframe>
         </section>
 
-        <section id="agenda-tv-movel" class="agenda-section">
+        <section id="agenda-tv-movel" class="agenda-section scroll-target-section">
             <h2>Agenda da TV Móvel</h2>
             <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0PZYMCkRiwW1r8kBSYnIYtBhnuHNvw-eyHve4VEzL9b38yQNiQg7bsatY66-SDu9GE-rDnB6Xz"></iframe>
         </section>
 
-        <section id="agenda-chromebook" class="agenda-section">
+        <section id="agenda-chromebook" class="agenda-section scroll-target-section">
             <h2>Agenda do Chromebook</h2>
             <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0aRMfd54hF5EcTDlLkPsfDtB2KY8UcBHYkB1i8DewfTStuJXi3HcOyOoK-YmyC2Qbqr7AWeatb"></iframe>
         </section>
 
-        <section id="agenda-projetor-freestyle" class="agenda-section">
+        <section id="agenda-projetor-freestyle" class="agenda-section scroll-target-section">
             <h2>Agenda do Projetor Freestyle</h2>
-            <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HoZCK7P00vVtaKMmjPWoizAtupjhtGUw2vcC3gblG-yeQKy4C69Z_xvfnvxPdzHkz7jvVzyRj"></iframe>
+            <iframe class="agenda-iframe" src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2HoZCK7P00vVtaKMmjPWoizAtupjhtGUw2vcC3gblG-yeQKy4C9Z_xvfnvxPdzHkz7jvVzyRj"></iframe>
         </section>
 
-        <section id="dynamic-schedule-section" class="agenda-section">
+        <section id="dynamic-schedule-section" class="agenda-section scroll-target-section">
             <h2>Agendamento de <span id="dynamicItemName"></span></h2>
             <iframe id="dynamic-schedule-iframe" class="agenda-iframe" src=""></iframe>
         </section>
 
-        <section id="tutorial-video-projetor-freestyle" class="tutorial-video-section">
+        <section id="tutorial-video-projetor-freestyle" class="tutorial-video-section scroll-target-section">
             <h2>Tutorial: Projetor Freestyle</h2>
             <div id="player-projetor-freestyle" class="video-container" data-youtube-id="qGEBHNMc3Bg"></div>
         </section>
 
-        <section id="tutorial-video-chromebook" class="tutorial-video-section">
+        <section id="tutorial-video-chromebook" class="tutorial-video-section scroll-target-section">
             <h2>Tutorial: Chromebook</h2>
             <div id="player-chromebook" class="video-container" data-youtube-id="vS1VPVYwe-E"></div>
         </section>
 
-        <section id="tutorial-video-lousa-interativa" class="tutorial-video-section">
+        <section id="tutorial-video-lousa-interativa" class="tutorial-video-section scroll-target-section">
             <h2>Tutorial: Lousa Interativa</h2>
             <div id="player-lousa-interativa" class="video-container" data-youtube-id="yejglOffWTM"></div>
         </section>
 
-        <section id="tutorial-video-lab-maker" class="tutorial-video-section">
+        <section id="tutorial-video-lab-maker" class="tutorial-video-section scroll-target-section">
             <h2>Tutorial: Lab Maker</h2>
             <div id="player-lab-maker" class="video-container" data-youtube-id="W1udgt96Jfo"></div>
         </section>
 
-        <section id="tutorial-video-sala-google" class="tutorial-video-section">
+        <section id="tutorial-video-sala-google" class="tutorial-video-section scroll-target-section">
             <h2>Tutorial: Sala Google</h2>
             <div id="player-sala-google" class="video-container" data-youtube-id="jFf5h6w3nQo"></div>
         </section>
