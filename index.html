@@ -6,6 +6,10 @@
     <title>Agendamento de Equipamentos e Salas - EMAI Radegundis Feitosa Nunes</title>
     <style>
         /* CSS */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -183,6 +187,12 @@
             color: white;
             position: relative;
         }
+        
+        .item-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
 
         .item-card:hover {
             transform: translateY(-5px);
@@ -331,7 +341,7 @@
         }
 
         .mediator-schedule table {
-            width: 90%;
+            width: 100%;
             max-width: 800px;
             border-collapse: collapse;
             margin: 20px auto 0 auto;
@@ -387,6 +397,10 @@
             border: none;
             margin-top: 20px;
         }
+        
+        .agenda-iframe {
+            max-width: 100%;
+        }
 
         /* Estilo para o player do YouTube dentro do iframe */
         .video-container {
@@ -404,6 +418,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            max-width: 100%;
         }
 
         /* Modal CSS (comum para agendamento e tutoriais) */
@@ -569,6 +584,14 @@
                 padding: 10px;
             }
 
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
             section h2 {
                 font-size: 1.5em;
             }
@@ -580,48 +603,39 @@
             .item-card {
                 min-height: 250px;
             }
-
-            .mediator-schedule table, .mediator-schedule thead, .mediator-schedule tbody, .mediator-schedule th, .mediator-schedule td, .mediator-schedule tr {
-                display: block;
+            
+            /* Melhoria para a tabela em mobile */
+            .mediator-schedule table {
+                border: 0;
             }
-
-            .mediator-schedule thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
+            
+            .mediator-schedule thead {
+                display: none;
             }
             
             .mediator-schedule tr {
-                border: 1px solid #ccc;
                 margin-bottom: 10px;
+                display: block;
+                border: 1px solid #ccc;
             }
-
+            
             .mediator-schedule td {
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-                text-align: left;
+                display: block;
+                text-align: right;
+                font-size: 0.9em;
+                border-bottom: 1px dotted #ccc;
             }
-
+            
             .mediator-schedule td:before {
-                position: absolute;
-                top: 6px;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
                 content: attr(data-label);
+                float: left;
                 font-weight: bold;
+                text-transform: uppercase;
             }
-
-            /* Adaptação para o conteúdo da tabela para melhor visualização */
-            .mediator-schedule td:nth-of-type(1):before { content: "Rotina Diária"; }
-            .mediator-schedule td:nth-of-type(2):before { content: "Segunda-feira"; }
-            .mediator-schedule td:nth-of-type(3):before { content: "Terça-feira"; }
-            .mediator-schedule td:nth-of-type(4):before { content: "Quarta-feira"; }
-            .mediator-schedule td:nth-of-type(5):before { content: "Quinta-feira"; }
-            .mediator-schedule td:nth-of-type(6):before { content: "Sexta-feira"; }
+            
+            .mediator-schedule td:last-child {
+                border-bottom: 0;
+            }
 
             footer {
                 padding: 10px;
@@ -629,6 +643,10 @@
             
             footer p {
                 font-size: 0.8em;
+            }
+
+            .modal-content {
+                width: 95%;
             }
         }
     </style>
